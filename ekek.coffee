@@ -1,3 +1,4 @@
+SIO = 'http://10.0.0.10:4568'
 ___ = (x) -> console.log x
 
 _events =
@@ -18,6 +19,5 @@ _init = () ->
     event.preventDefault()
 
 ___ 'initialize socket'
-_sock = io.connect 'http://192.168.0.103:4567'
-_sock.on 'connect', ->
-  ___ 'connected'
+_sock = io.connect SIO
+_sock.on 'connect', -> ___ 'connected'
