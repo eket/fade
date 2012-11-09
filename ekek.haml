@@ -1,12 +1,12 @@
 %html
   %head
-    %script{:src => 'socket.io.min.js'}
+    %script{:src => '../li/socket.io.min.js'}
     %script{:src => 'ekek.js'}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0, user-scalable=no'}
     :css
-      html{height:100%}
+      html{height:100%;background:#000;}
       body{width:50%; min-height:100%; float:right; margin: 0;}
-      #left{float:left; width:100%; margin-left:-100%}
+      #left{float:left; width:99%; margin-left:-100%}
       #left,
       #right{
       background: -moz-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
