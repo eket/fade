@@ -1,0 +1,15 @@
+{
+  "name": "fade",
+  "version": "0.0.0",
+  "main": "ek.js",
+  "dependencies": {
+    "socket.io": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eket/fade.git"
+  },
+  "author": "mcbuddha",
+  "license": "public domain",
+  "readmeFilename": "README.md"
+}
