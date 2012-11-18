@@ -35,7 +35,7 @@ update = (side, d) ->
   w = fs.writeSync serial, s
   ___ "written #{w}"
 
-io = (require 'socket.io').listen SIO
+io = (require 'socket.io').listen SIO, 'log level': 1
 io.sockets.on 'connection', (s) ->
   s.on 'left', (d) -> update 0, d
   s.on 'right', (d) -> update 1, d
