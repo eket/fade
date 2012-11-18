@@ -1,4 +1,4 @@
-SIO = 'http://10.0.0.10:4568'
+SIO = 'http://localhost:4568'
 ___ = (x) -> console.log x
 
 _events =

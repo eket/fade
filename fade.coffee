@@ -1,7 +1,8 @@
 # serial port of the arduino
-TTY = '/dev/ttyACM0'
+TTY = process.argv[2] or '/dev/ttyACM0'
 # socket.io port
-SIO = 4568
+SIO = process.argv[3] or 4568
+
 # LEDs off
 LED_OFF = '255 255 255 255 255 255\n'
 # LEDs on
