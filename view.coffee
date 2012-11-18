@@ -12,9 +12,11 @@ _add_event_listener = (el, event_key, fun) ->
 
 _init = () ->
   _add_event_listener (document.getElementById 'left'), 'move', (event) ->
+    ___ '<'
     _sock.emit 'left', (_get_y event) / window.innerHeight
     event.preventDefault()
   _add_event_listener (document.getElementById 'right'), 'move', (event) ->
+    ___ '>'
     _sock.emit 'right', (_get_y event) / window.innerHeight
     event.preventDefault()
 
