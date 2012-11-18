@@ -14,7 +14,7 @@ fs = require 'fs'
 counter = 0
 leds = [0, 0]
 serial = fs.openSync TTY, 'w'
-___ "opened #{serial}"
+___ "opened #{TTY} #{serial}"
 
 # startup sequence
 setTimeout (->
@@ -23,11 +23,6 @@ setTimeout (->
   setTimeout (->
     w = fs.writeSync serial, LED_ON
     ___ "on #{w}"), 1000), 500
-
-io = (require 'socket.io').listen SIO
-io.sockets.on 'connection', (s) ->
-  s.on 'left', (d) -> update 0, d
-  s.on 'right', (d) -> update 1, d
 
 serialize = (hue) ->
   {_red:r, _green:g, _blue:b} = (color.hue hue).rgb()
@@ -38,3 +33,9 @@ update = (side, d) ->
   s = "#{serialize leds[0]} #{serialize leds[1]}\n"
   w = fs.writeSync serial, s
   ___ "written #{w}"
+
+io = (require 'socket.io').listen SIO
+io.sockets.on 'connection', (s) ->
+  s.on 'left', (d) -> update 0, d
+  s.on 'right', (d) -> update 1, d
+___ "opened socket.io #{SIO}"
