@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "ek.js",
   "dependencies": {
-    "socket.io": "*"
+    "socket.io": "*",
+    "onecolor": "*"
   },
   "repository": {
     "type": "git",
